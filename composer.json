@@ -1,0 +1,15 @@
+{
+    "name": "cloverphp/hyperf-services",
+    "description": "php services base on hyperf framework.",
+    "type": "project",
+    "require": {
+        "hyperf/nano": "1.0"
+    },
+    "authors": [
+        {
+            "name": "clover",
+            "email": "cloverphp@qq.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
