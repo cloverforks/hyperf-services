@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sse client</title>
+    <script>
+        window.onload = function () {
+            var source = new EventSource("http://localhost:8080/sse");
+            var eventList = document.getElementById('sse');
+            source.onopen = function (e) {
+                console.log('sse open', e);
+            };
+
+            source.onmessage = function (e) {
+                var newElement = document.createElement("li");
+                newElement.innerHTML = "message at " + e.data;
+                eventList.appendChild(newElement);
+            };
+
+            source.onerror = function (e) {
+                console.log('sse error', e);
+            };
+
+            source.addEventListener("ping", function (e) {
+                var newElement = document.createElement("li");
+                newElement.innerHTML = "ping at " + e.data;
+                eventList.appendChild(newElement);
+            }, false);
+        }
+    </script>
+</head>
+<body>
+<h3>sse test</h3>
+<ul id="sse">
+
+</ul>
+</body>
+</html>

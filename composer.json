@@ -11,5 +11,8 @@
             "email": "cloverphp@qq.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require-dev": {
+        "swoole/ide-helper": "@dev"
+    }
 }
